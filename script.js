@@ -6,7 +6,9 @@ const exdate = document.getElementById('exdate'); // поле выбора ко�
 btn.addEventListener("click", function() {
     const stdate_r = stdate.value.replaceAll("-", "");
     const exdate_r = exdate.value.replaceAll("-", "");
-    const URI = `https://bank.gov.ua/NBU_Exchange/exchange_site?start=${stdate_r}&end=${exdate_r}&valcode=${type.value}&sort=exchangedate&order=desc&json`;
+    //const URI = `https://bank.gov.ua/NBU_Exchange/exchange_site?start=${stdate_r}&end=${exdate_r}&valcode=${type.value}&sort=exchangedate&order=desc&json`;
+    // не работает вывод даты в диапозоне дат 
+    const URI = `https://bank.gov.ua/NBUStatService/v1/statdirectory/exchange?valcode=${type.value}&date=${exdate_r}&json`;
     const XHR = new XMLHttpRequest();
     XHR.open("GET", URI);
     XHR.send();
@@ -21,5 +23,4 @@ btn.addEventListener("click", function() {
             }
         }
     })
-        
 })
