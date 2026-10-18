@@ -34,7 +34,6 @@ btn.addEventListener("click", function () {
                 exchangeChart = new Chart(ctx, {
                     type: 'line',
                     data: {
-                        // Ось X
                         labels: datesArray,
                         datasets: [{
                             label: 'UAH exchange rate by date',
